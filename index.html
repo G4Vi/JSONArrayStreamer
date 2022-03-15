@@ -11,7 +11,9 @@
         for await (const json of jsonReader) {
             for( const item of json) {
                 const li = document.createElement("li");
-                li.textContent = item.actor.display_login + ' ' + item.type;
+                const itemtext = item.actor.display_login + ' ' + item.type;
+                li.textContent = itemtext;
+                console.log('appending item <li>'+itemtext+'</li>');
                 listElm.appendChild(li);
             }
         }
