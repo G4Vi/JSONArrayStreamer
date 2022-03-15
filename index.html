@@ -1,0 +1,20 @@
+<h1>JSONArrayStreamer Demo</h1>
+
+<h2>Github events</h2>
+<ol id="eventlist"><ol>
+
+<script type="module">
+    import { JSONArrayStreamer } from 'JSONArrayStreamer.js'
+    const listElm = document.getElementById("eventlist");
+    const jsonReader = JSONArrayStreamer('https://api.github.com/events');
+    (async function(){
+        for await (const json of jsonReader) {
+            for( const item of json) {
+                const li = document.createElement("li");
+                li.textContent = item.actor.display_login + ' ' + item.type;
+                listElm.appendChild(li);
+            }
+        }
+    })();
+</script>
+  
