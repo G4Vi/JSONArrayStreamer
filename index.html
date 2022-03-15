@@ -4,7 +4,7 @@
 <ol id="eventlist"><ol>
 
 <script type="module">
-    import { JSONArrayStreamer } from 'JSONArrayStreamer.js'
+    import { JSONArrayStreamer } from './JSONArrayStreamer.js'
     const listElm = document.getElementById("eventlist");
     const jsonReader = JSONArrayStreamer('https://api.github.com/events');
     (async function(){
